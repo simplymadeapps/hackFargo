@@ -26,4 +26,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)callAPIPressed:(id)sender {
+    HackFargoAPIController *controller = [[HackFargoAPIController alloc] initWithDelegate:self];
+    [controller hackFargoRequestWithAPI:HackFargoAPIParty withData:nil];
+}
+
+#pragma mark -
 @end

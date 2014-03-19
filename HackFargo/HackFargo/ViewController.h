@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HackFargoAPIController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <HackFargoAPIControllerDelegate> {
+    IBOutlet UIButton *callAPI;
+}
+
+- (IBAction)callAPIPressed:(id)sender;
 
 @end
