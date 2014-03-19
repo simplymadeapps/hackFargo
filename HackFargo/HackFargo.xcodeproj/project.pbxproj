@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A923261018D9ADD100153CDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A923260F18D9ADD100153CDF /* Foundation.framework */; };
+		A923261218D9ADD100153CDF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A923261118D9ADD100153CDF /* CoreGraphics.framework */; };
+		A923261418D9ADD100153CDF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A923261318D9ADD100153CDF /* UIKit.framework */; };
+		A923261A18D9ADD100153CDF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A923261818D9ADD100153CDF /* InfoPlist.strings */; };
+		A923261C18D9ADD100153CDF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A923261B18D9ADD100153CDF /* main.m */; };
+		A923262018D9ADD100153CDF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A923261F18D9ADD100153CDF /* AppDelegate.m */; };
+		A923262318D9ADD100153CDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A923262118D9ADD100153CDF /* Main.storyboard */; };
+		A923262618D9ADD100153CDF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A923262518D9ADD100153CDF /* ViewController.m */; };
+		A923262818D9ADD100153CDF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A923262718D9ADD100153CDF /* Images.xcassets */; };
+		A923262F18D9ADD100153CDF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A923262E18D9ADD100153CDF /* XCTest.framework */; };
+		A923263018D9ADD100153CDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A923260F18D9ADD100153CDF /* Foundation.framework */; };
+		A923263118D9ADD100153CDF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A923261318D9ADD100153CDF /* UIKit.framework */; };
+		A923263918D9ADD100153CDF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A923263718D9ADD100153CDF /* InfoPlist.strings */; };
+		A923263B18D9ADD100153CDF /* HackFargoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A923263A18D9ADD100153CDF /* HackFargoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A923263218D9ADD100153CDF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A923260418D9ADD100153CDF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A923260B18D9ADD100153CDF;
+			remoteInfo = HackFargo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A923260C18D9ADD100153CDF /* HackFargo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackFargo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A923260F18D9ADD100153CDF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A923261118D9ADD100153CDF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A923261318D9ADD100153CDF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A923261718D9ADD100153CDF /* HackFargo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HackFargo-Info.plist"; sourceTree = "<group>"; };
+		A923261918D9ADD100153CDF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A923261B18D9ADD100153CDF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A923261D18D9ADD100153CDF /* HackFargo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HackFargo-Prefix.pch"; sourceTree = "<group>"; };
+		A923261E18D9ADD100153CDF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A923261F18D9ADD100153CDF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A923262218D9ADD100153CDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A923262418D9ADD100153CDF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A923262518D9ADD100153CDF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A923262718D9ADD100153CDF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A923262D18D9ADD100153CDF /* HackFargoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackFargoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A923262E18D9ADD100153CDF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A923263618D9ADD100153CDF /* HackFargoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HackFargoTests-Info.plist"; sourceTree = "<group>"; };
+		A923263818D9ADD100153CDF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A923263A18D9ADD100153CDF /* HackFargoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HackFargoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A923260918D9ADD100153CDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A923261218D9ADD100153CDF /* CoreGraphics.framework in Frameworks */,
+				A923261418D9ADD100153CDF /* UIKit.framework in Frameworks */,
+				A923261018D9ADD100153CDF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A923262A18D9ADD100153CDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A923262F18D9ADD100153CDF /* XCTest.framework in Frameworks */,
+				A923263118D9ADD100153CDF /* UIKit.framework in Frameworks */,
+				A923263018D9ADD100153CDF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A923260318D9ADD100153CDF = {
+			isa = PBXGroup;
+			children = (
+				A923261518D9ADD100153CDF /* HackFargo */,
+				A923263418D9ADD100153CDF /* HackFargoTests */,
+				A923260E18D9ADD100153CDF /* Frameworks */,
+				A923260D18D9ADD100153CDF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A923260D18D9ADD100153CDF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A923260C18D9ADD100153CDF /* HackFargo.app */,
+				A923262D18D9ADD100153CDF /* HackFargoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A923260E18D9ADD100153CDF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A923260F18D9ADD100153CDF /* Foundation.framework */,
+				A923261118D9ADD100153CDF /* CoreGraphics.framework */,
+				A923261318D9ADD100153CDF /* UIKit.framework */,
+				A923262E18D9ADD100153CDF /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A923261518D9ADD100153CDF /* HackFargo */ = {
+			isa = PBXGroup;
+			children = (
+				A923261E18D9ADD100153CDF /* AppDelegate.h */,
+				A923261F18D9ADD100153CDF /* AppDelegate.m */,
+				A923262118D9ADD100153CDF /* Main.storyboard */,
+				A923262418D9ADD100153CDF /* ViewController.h */,
+				A923262518D9ADD100153CDF /* ViewController.m */,
+				A923262718D9ADD100153CDF /* Images.xcassets */,
+				A923261618D9ADD100153CDF /* Supporting Files */,
+			);
+			path = HackFargo;
+			sourceTree = "<group>";
+		};
+		A923261618D9ADD100153CDF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A923261718D9ADD100153CDF /* HackFargo-Info.plist */,
+				A923261818D9ADD100153CDF /* InfoPlist.strings */,
+				A923261B18D9ADD100153CDF /* main.m */,
+				A923261D18D9ADD100153CDF /* HackFargo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A923263418D9ADD100153CDF /* HackFargoTests */ = {
+			isa = PBXGroup;
+			children = (
+				A923263A18D9ADD100153CDF /* HackFargoTests.m */,
+				A923263518D9ADD100153CDF /* Supporting Files */,
+			);
+			path = HackFargoTests;
+			sourceTree = "<group>";
+		};
+		A923263518D9ADD100153CDF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A923263618D9ADD100153CDF /* HackFargoTests-Info.plist */,
+				A923263718D9ADD100153CDF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A923260B18D9ADD100153CDF /* HackFargo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A923263E18D9ADD100153CDF /* Build configuration list for PBXNativeTarget "HackFargo" */;
+			buildPhases = (
+				A923260818D9ADD100153CDF /* Sources */,
+				A923260918D9ADD100153CDF /* Frameworks */,
+				A923260A18D9ADD100153CDF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HackFargo;
+			productName = HackFargo;
+			productReference = A923260C18D9ADD100153CDF /* HackFargo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A923262C18D9ADD100153CDF /* HackFargoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A923264118D9ADD100153CDF /* Build configuration list for PBXNativeTarget "HackFargoTests" */;
+			buildPhases = (
+				A923262918D9ADD100153CDF /* Sources */,
+				A923262A18D9ADD100153CDF /* Frameworks */,
+				A923262B18D9ADD100153CDF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A923263318D9ADD100153CDF /* PBXTargetDependency */,
+			);
+			name = HackFargoTests;
+			productName = HackFargoTests;
+			productReference = A923262D18D9ADD100153CDF /* HackFargoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A923260418D9ADD100153CDF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Simply Made Apps";
+				TargetAttributes = {
+					A923262C18D9ADD100153CDF = {
+						TestTargetID = A923260B18D9ADD100153CDF;
+					};
+				};
+			};
+			buildConfigurationList = A923260718D9ADD100153CDF /* Build configuration list for PBXProject "HackFargo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A923260318D9ADD100153CDF;
+			productRefGroup = A923260D18D9ADD100153CDF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A923260B18D9ADD100153CDF /* HackFargo */,
+				A923262C18D9ADD100153CDF /* HackFargoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A923260A18D9ADD100153CDF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A923262818D9ADD100153CDF /* Images.xcassets in Resources */,
+				A923261A18D9ADD100153CDF /* InfoPlist.strings in Resources */,
+				A923262318D9ADD100153CDF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A923262B18D9ADD100153CDF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A923263918D9ADD100153CDF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A923260818D9ADD100153CDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A923262618D9ADD100153CDF /* ViewController.m in Sources */,
+				A923262018D9ADD100153CDF /* AppDelegate.m in Sources */,
+				A923261C18D9ADD100153CDF /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A923262918D9ADD100153CDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A923263B18D9ADD100153CDF /* HackFargoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A923263318D9ADD100153CDF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A923260B18D9ADD100153CDF /* HackFargo */;
+			targetProxy = A923263218D9ADD100153CDF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A923261818D9ADD100153CDF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A923261918D9ADD100153CDF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A923262118D9ADD100153CDF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A923262218D9ADD100153CDF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A923263718D9ADD100153CDF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A923263818D9ADD100153CDF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A923263C18D9ADD100153CDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A923263D18D9ADD100153CDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A923263F18D9ADD100153CDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HackFargo/HackFargo-Prefix.pch";
+				INFOPLIST_FILE = "HackFargo/HackFargo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A923264018D9ADD100153CDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HackFargo/HackFargo-Prefix.pch";
+				INFOPLIST_FILE = "HackFargo/HackFargo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		A923264218D9ADD100153CDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HackFargo.app/HackFargo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HackFargo/HackFargo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "HackFargoTests/HackFargoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		A923264318D9ADD100153CDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HackFargo.app/HackFargo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HackFargo/HackFargo-Prefix.pch";
+				INFOPLIST_FILE = "HackFargoTests/HackFargoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A923260718D9ADD100153CDF /* Build configuration list for PBXProject "HackFargo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A923263C18D9ADD100153CDF /* Debug */,
+				A923263D18D9ADD100153CDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A923263E18D9ADD100153CDF /* Build configuration list for PBXNativeTarget "HackFargo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A923263F18D9ADD100153CDF /* Debug */,
+				A923264018D9ADD100153CDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A923264118D9ADD100153CDF /* Build configuration list for PBXNativeTarget "HackFargoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A923264218D9ADD100153CDF /* Debug */,
+				A923264318D9ADD100153CDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A923260418D9ADD100153CDF /* Project object */;
+}
