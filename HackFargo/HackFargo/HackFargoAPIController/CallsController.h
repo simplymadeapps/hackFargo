@@ -16,6 +16,9 @@
 
 @optional
 - (void)allCallsResults:(NSArray *)calls;
+- (void)callsByDateRangeResults:(NSArray *)calls;
+- (void)allPartiesResults:(NSArray *)parties;
+- (void)partiesByDateRangeResults:(NSArray *)parties;
 
 @end
 
@@ -25,5 +28,8 @@
 
 - (id)initWithDelegate:(id<CallsControllerDelegate>)delegate;
 - (void)allCalls;
+- (void)callsWithStartDate:(NSDate *)startDate withEndDate:(NSDate *)endDate;
+- (void)allParties;
+- (void)partiesWithStartDate:(NSDate *)startDate withEndDate:(NSDate *)endDate;
 
 @end
