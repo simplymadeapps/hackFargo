@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HackFargoAPIController.h"
+#import "CallsController.h"
 
-@interface ViewController : UIViewController <HackFargoAPIControllerDelegate> {
+@interface ViewController : UIViewController <CallsControllerDelegate> {
     IBOutlet UIButton *callAPI;
 }
 

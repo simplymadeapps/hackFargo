@@ -9,13 +9,11 @@
 #import "HackFargoAPIController.h"
 #import "AFNetworking.h"
 
-static NSString *hackFargoAPIEndpoint = @"http://api.hackfargo.co";
-static NSString *hackFargoAPICalls = @"/calls";
-static NSString *hackFargoAPIType = @"/type";
+static NSString *apiEndpoint = @"http://api.hackfargo.co/";
 
 @implementation HackFargoAPIController
 
-- (id)initWithDelegate:(id<HackFargoAPIControllerDelegate>)delegate {
+-(id)initWithDelegate:(id<APIControllerDelegate>)delegate {
     self = [super init];
     if (self) {
         self.delegate = delegate;
@@ -23,29 +21,28 @@ static NSString *hackFargoAPIType = @"/type";
     return self;
 }
 
-- (void)hackFargoRequestWithAPI:(HackFargoAPIName)apiName withData:(NSDictionary *)data {
-    switch (apiName) {
-        case HackFargoAPIParty: {
-            NSMutableURLRequest *request = [self hackFargoRequestWithEndpoint:hackFargoAPICalls];
-            break;
-        }
-        default:
-            break;
-    }
++(NSOperationQueue *)sharedOperationQueue {
+    static NSOperationQueue *_sharedOperationQueue = nil;
+    static dispatch_once_t oncePredicate;
+    dispatch_once(&oncePredicate, ^{
+        _sharedOperationQueue = [[NSOperationQueue alloc] init];
+    });
+    return _sharedOperationQueue;
 }
 
-- (NSMutableURLRequest *)hackFargoRequestWithEndpoint:(NSString *)endpoint {
-    
-    NSString *apiURIString = [NSString stringWithFormat:@"%@%@",hackFargoAPIEndpoint, endpoint];
+- (NSMutableURLRequest *)defaultRequestWithUrlPart:(NSString *)uriPart {
+    NSString *apiURIString = [NSString stringWithFormat:@"%@%@",apiEndpoint,[uriPart stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURL *apiURL = [NSURL URLWithString:apiURIString];
+    NSMutableURLRequest *apiRequest = [[NSMutableURLRequest alloc] initWithURL:apiURL];
     
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:apiURL];
-    
-    return request;
+    return apiRequest;
 }
 
-- (void)hackFargoRequestWithRequest:(NSURLRequest *)httpRequest forApi:(HackFargoAPIName)apiName withParameters:(NSDictionary *)parameters
+
+#pragma mark Request Managment Code
+- (void)requestWithRequest:(NSURLRequest *)httpRequest withParameters:(NSDictionary *)parameters withCallIdentifier:(id)callIdentifier
 {
+    
     NSError *afserialError;
     
     NSURLRequest *newRequest = [[AFJSONRequestSerializer serializer] requestBySerializingRequest:httpRequest withParameters:parameters error:&afserialError];
@@ -56,17 +53,12 @@ static NSString *hackFargoAPIType = @"/type";
         return;
     }
     
-    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    NSOperationQueue *queue = [HackFargoAPIController sharedOperationQueue];
     AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:newRequest];
     op.responseSerializer = [AFJSONResponseSerializer serializer];
+    
     [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if (self.delegate) {
-            id resultObjects = [self processReturnDataFromAPI:apiName withDataObject:responseObject];
-            
-            if ([self.delegate respondsToSelector:@selector(requestSuccess:forAPI:)]) {
-                [self.delegate requestSuccess:resultObjects forAPI:apiName];
-            }
-        }
+        [self.delegate requestSuccess:responseObject withCallIdentifier:callIdentifier];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         id errorCode;
@@ -89,10 +81,6 @@ static NSString *hackFargoAPIType = @"/type";
         if (operation.response) {
             NSLog(@"\n-- Response Headers --\n%@",[operation.response allHeaderFields]);
             NSLog(@"\n-- Response Body --\n%@",operation.responseString);
-            
-            if (operation.responseObject) {
-                errorCode = [operation.responseObject valueForKeyPath:@"D.Code"];
-            }
         }
         
         if (operation.response) {
@@ -111,8 +99,8 @@ static NSString *hackFargoAPIType = @"/type";
             }
             
             if (self.delegate) {
-                if ([self.delegate respondsToSelector:@selector(requestFailed:forAPI:)]) {
-                    //[self.delegate requestFailed:@{@"errorCode":errorCode,@"errorMessage":errorMessage}];
+                if ([self.delegate respondsToSelector:@selector(requestFailed:withCallIdentifier:)]) {
+                    [self.delegate requestFailed:@{@"errorCode":errorCode,@"errorMessage":errorMessage} withCallIdentifier:callIdentifier];
                 }
             }
         } else {
@@ -120,8 +108,8 @@ static NSString *hackFargoAPIType = @"/type";
                 NSLog(@"Operation Canceled!");
             } else {
                 if (self.delegate) {
-                    if ([self.delegate respondsToSelector:@selector(requestFailed:forAPI:)]) {
-                        //[self.delegate requestFailed:@{@"errorMessage":errorMessage}];
+                    if ([self.delegate respondsToSelector:@selector(requestFailed:withCallIdentifier:)]) {
+                        [self.delegate requestFailed:@{@"errorMessage":errorMessage} withCallIdentifier:callIdentifier];
                     }
                 }
             }
@@ -130,16 +118,5 @@ static NSString *hackFargoAPIType = @"/type";
     
     [queue addOperation:op];
 }
-
-- (id)processReturnDataFromAPI:(HackFargoAPIName)apiName withDataObject:(id)dataObject {
-    NSDictionary *fullResponse;
-    
-    if ([dataObject isKindOfClass:[NSDictionary class]]) {
-        fullResponse = (NSDictionary *)dataObject;
-    }
-    
-    return fullResponse;
-}
-
 
 @end

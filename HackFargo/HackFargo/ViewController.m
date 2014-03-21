@@ -27,9 +27,19 @@
 }
 
 - (IBAction)callAPIPressed:(id)sender {
-    HackFargoAPIController *controller = [[HackFargoAPIController alloc] initWithDelegate:self];
-    [controller hackFargoRequestWithAPI:HackFargoAPIParty withData:nil];
+    CallsController *controller = [[CallsController alloc] initWithDelegate:self];
+    [controller allCalls];
 }
 
-#pragma mark -
+#pragma mark - CallsControllerDelegate Methods
+
+-(void)allCallsResults:(NSArray *)calls {
+    NSLog(@"%@",calls);
+}
+
+- (void)requestFailed:(NSDictionary *)results {
+    NSLog(@"%@",results);
+}
+
+
 @end

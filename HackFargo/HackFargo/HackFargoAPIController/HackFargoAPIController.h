@@ -8,23 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum {
-    HackFargoAPIParty
-} HackFargoAPIName;
-
-@protocol HackFargoAPIControllerDelegate <NSObject>
+@protocol APIControllerDelegate <NSObject>
 
 @required
-- (void)requestSuccess:(id)results forAPI:(HackFargoAPIName)apiName;
-- (void)requestFailed:(NSError *)error forAPI:(HackFargoAPIName)apiName;
+- (void)requestSuccess:(id)results withCallIdentifier:(id)callIdentifier;
+- (void)requestFailed:(NSDictionary *)results withCallIdentifier:(id)callIdentifier;
 
 @end
 
 @interface HackFargoAPIController : NSObject
 
+@property (nonatomic, strong) id<APIControllerDelegate> delegate;
 
-@property (weak, nonatomic) id<HackFargoAPIControllerDelegate>delegate;
+- (id)initWithDelegate:(id<APIControllerDelegate>)delegate;
+- (void)requestWithRequest:(NSURLRequest *)httpRequest withParameters:(NSDictionary *)parameters withCallIdentifier:(id)callIdentifier;
+- (NSMutableURLRequest *)defaultRequestWithUrlPart:(NSString *)uriPart;
 
-- (id)initWithDelegate:(id<HackFargoAPIControllerDelegate>)delegate;
-- (void)hackFargoRequestWithAPI:(HackFargoAPIName)apiName withData:(NSDictionary *)data;
 @end
