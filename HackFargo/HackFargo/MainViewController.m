@@ -73,6 +73,12 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    
+}
+
 #pragma mark - CallsControllerDelegate Methods
 
 -(void)allCallsResults:(NSArray *)calls {
@@ -89,11 +95,13 @@
 #pragma mark - Map Helper Methods
 - (void)updateMapPins {
     // Add the annotation to our map view
+    NSMutableArray *annotations = [NSMutableArray new];
     for (NSDictionary *dict in self.listItems) {
         CLLocationCoordinate2D coord = CLLocationCoordinate2DMake([dict[@"Lat"] doubleValue], [dict[@"Long"] doubleValue]);
         HackFargoAnnotation *annotation = [[HackFargoAnnotation alloc] initWithTitle:dict[@"Description"] andCoordinate:coord];
-        [mapView addAnnotation:annotation];
+        [annotations addObject:annotation];
     }
+    [mapView showAnnotations:annotations animated:YES];
 }
 
 
