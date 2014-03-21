@@ -1,40 +1,91 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ziE-mh-bef">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Main View Controller-->
+        <scene sceneID="hfj-Gw-WSY">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="hBe-nX-ixp" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="CLj-g9-bS6"/>
+                        <viewControllerLayoutGuide type="bottom" id="1Jb-p5-WDm"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" id="ith-sS-5gb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4b-AS-nz4">
-                                <rect key="frame" x="117" y="144" width="86" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Call API">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ze7-Ar-Wbd">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <action selector="callAPIPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mSC-eA-mZE"/>
+                                    <outlet property="delegate" destination="hBe-nX-ixp" id="T7S-ph-4j2"/>
                                 </connections>
-                            </button>
+                            </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="EaU-MW-p0m">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="hBe-nX-ixp" id="TaQ-rG-ldb"/>
+                                    <outlet property="delegate" destination="hBe-nX-ixp" id="kT9-Vh-Qe2"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ze7-Ar-Wbd" firstAttribute="top" secondItem="ith-sS-5gb" secondAttribute="top" id="8fy-n4-LcR"/>
+                            <constraint firstAttribute="trailing" secondItem="Ze7-Ar-Wbd" secondAttribute="trailing" id="Csq-et-RBo"/>
+                            <constraint firstItem="Ze7-Ar-Wbd" firstAttribute="leading" secondItem="ith-sS-5gb" secondAttribute="leading" id="DDq-nK-3tb"/>
+                            <constraint firstItem="1Jb-p5-WDm" firstAttribute="top" secondItem="EaU-MW-p0m" secondAttribute="bottom" id="ILq-VR-oyh"/>
+                            <constraint firstItem="EaU-MW-p0m" firstAttribute="top" secondItem="ith-sS-5gb" secondAttribute="top" id="J8T-Uo-r15"/>
+                            <constraint firstItem="1Jb-p5-WDm" firstAttribute="top" secondItem="Ze7-Ar-Wbd" secondAttribute="bottom" id="KQk-Xf-kTV"/>
+                            <constraint firstAttribute="trailing" secondItem="EaU-MW-p0m" secondAttribute="trailing" id="ToD-sF-LGj"/>
+                            <constraint firstItem="EaU-MW-p0m" firstAttribute="leading" secondItem="ith-sS-5gb" secondAttribute="leading" id="bDa-Wd-zow"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="BK9-1d-gsp">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="2MQ-Eb-4qF">
+                            <rect key="frame" x="73" y="7" width="174" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="List"/>
+                                <segment title="Map"/>
+                            </segments>
+                            <connections>
+                                <action selector="controlSwitchChanged:" destination="hBe-nX-ixp" eventType="valueChanged" id="T5M-f9-0V1"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
                     <connections>
-                        <outlet property="callAPI" destination="c4b-AS-nz4" id="mK2-uh-Jgv"/>
+                        <outlet property="controlSwitch" destination="2MQ-Eb-4qF" id="LWs-Rp-Qlb"/>
+                        <outlet property="listTable" destination="EaU-MW-p0m" id="aHd-jM-KSe"/>
+                        <outlet property="mapView" destination="Ze7-Ar-Wbd" id="I2m-x8-CMU"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yTe-VR-1mv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="82" y="-394"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JP2-Gr-4qc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ziE-mh-bef" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dfD-QY-2rH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hBe-nX-ixp" kind="relationship" relationship="rootViewController" id="ocm-lD-Jb3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G4y-JZ-kNi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-377" y="-394"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

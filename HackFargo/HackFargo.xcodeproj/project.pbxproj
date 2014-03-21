@@ -17,7 +17,7 @@
 		A923261C18D9ADD100153CDF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A923261B18D9ADD100153CDF /* main.m */; };
 		A923262018D9ADD100153CDF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A923261F18D9ADD100153CDF /* AppDelegate.m */; };
 		A923262318D9ADD100153CDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A923262118D9ADD100153CDF /* Main.storyboard */; };
-		A923262618D9ADD100153CDF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A923262518D9ADD100153CDF /* ViewController.m */; };
+		A923262618D9ADD100153CDF /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A923262518D9ADD100153CDF /* MainViewController.m */; };
 		A923262818D9ADD100153CDF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A923262718D9ADD100153CDF /* Images.xcassets */; };
 		A923262F18D9ADD100153CDF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A923262E18D9ADD100153CDF /* XCTest.framework */; };
 		A923263018D9ADD100153CDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A923260F18D9ADD100153CDF /* Foundation.framework */; };
@@ -25,6 +25,8 @@
 		A923263918D9ADD100153CDF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A923263718D9ADD100153CDF /* InfoPlist.strings */; };
 		A923263B18D9ADD100153CDF /* HackFargoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A923263A18D9ADD100153CDF /* HackFargoTests.m */; };
 		A923264818D9B01300153CDF /* HackFargoAPIController.m in Sources */ = {isa = PBXBuildFile; fileRef = A923264718D9B01300153CDF /* HackFargoAPIController.m */; };
+		A95D582318DC85C8003A05E5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A95D582218DC85C8003A05E5 /* MapKit.framework */; };
+		A95D582618DC95C4003A05E5 /* HackFargoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D582518DC95C4003A05E5 /* HackFargoAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +56,8 @@
 		A923261E18D9ADD100153CDF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A923261F18D9ADD100153CDF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A923262218D9ADD100153CDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A923262418D9ADD100153CDF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A923262518D9ADD100153CDF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A923262418D9ADD100153CDF /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		A923262518D9ADD100153CDF /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		A923262718D9ADD100153CDF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A923262D18D9ADD100153CDF /* HackFargoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackFargoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A923262E18D9ADD100153CDF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -64,6 +66,9 @@
 		A923263A18D9ADD100153CDF /* HackFargoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HackFargoTests.m; sourceTree = "<group>"; };
 		A923264618D9B01300153CDF /* HackFargoAPIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HackFargoAPIController.h; path = HackFargoAPIController/HackFargoAPIController.h; sourceTree = "<group>"; };
 		A923264718D9B01300153CDF /* HackFargoAPIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HackFargoAPIController.m; path = HackFargoAPIController/HackFargoAPIController.m; sourceTree = "<group>"; };
+		A95D582218DC85C8003A05E5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A95D582418DC95C4003A05E5 /* HackFargoAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackFargoAnnotation.h; sourceTree = "<group>"; };
+		A95D582518DC95C4003A05E5 /* HackFargoAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackFargoAnnotation.m; sourceTree = "<group>"; };
 		F25281249ECD49B5AEAA604F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +79,7 @@
 			files = (
 				A923261218D9ADD100153CDF /* CoreGraphics.framework in Frameworks */,
 				A923261418D9ADD100153CDF /* UIKit.framework in Frameworks */,
+				A95D582318DC85C8003A05E5 /* MapKit.framework in Frameworks */,
 				A923261018D9ADD100153CDF /* Foundation.framework in Frameworks */,
 				5FA7CFB179F44E24A0F5310B /* libPods.a in Frameworks */,
 			);
@@ -124,6 +130,7 @@
 		A923260E18D9ADD100153CDF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A95D582218DC85C8003A05E5 /* MapKit.framework */,
 				A923260F18D9ADD100153CDF /* Foundation.framework */,
 				A923261118D9ADD100153CDF /* CoreGraphics.framework */,
 				A923261318D9ADD100153CDF /* UIKit.framework */,
@@ -136,12 +143,14 @@
 		A923261518D9ADD100153CDF /* HackFargo */ = {
 			isa = PBXGroup;
 			children = (
-				0E4EB24218DBC02500D27CD3 /* Categories */,
 				A923264418D9AFCB00153CDF /* App Delegate */,
+				0E4EB24218DBC02500D27CD3 /* Categories */,
 				A923264518D9AFE200153CDF /* API Manager */,
 				A923262118D9ADD100153CDF /* Main.storyboard */,
-				A923262418D9ADD100153CDF /* ViewController.h */,
-				A923262518D9ADD100153CDF /* ViewController.m */,
+				A923262418D9ADD100153CDF /* MainViewController.h */,
+				A923262518D9ADD100153CDF /* MainViewController.m */,
+				A95D582418DC95C4003A05E5 /* HackFargoAnnotation.h */,
+				A95D582518DC95C4003A05E5 /* HackFargoAnnotation.m */,
 				A923262718D9ADD100153CDF /* Images.xcassets */,
 				A923261618D9ADD100153CDF /* Supporting Files */,
 			);
@@ -246,6 +255,13 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Simply Made Apps";
 				TargetAttributes = {
+					A923260B18D9ADD100153CDF = {
+						SystemCapabilities = {
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					A923262C18D9ADD100153CDF = {
 						TestTargetID = A923260B18D9ADD100153CDF;
 					};
@@ -329,7 +345,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A923262618D9ADD100153CDF /* ViewController.m in Sources */,
+				A923262618D9ADD100153CDF /* MainViewController.m in Sources */,
+				A95D582618DC95C4003A05E5 /* HackFargoAnnotation.m in Sources */,
 				0E4EB23E18DBAF8000D27CD3 /* CallsController.m in Sources */,
 				A923262018D9ADD100153CDF /* AppDelegate.m in Sources */,
 				0E4EB24518DBC0AE00D27CD3 /* NSDate+HackDates.m in Sources */,

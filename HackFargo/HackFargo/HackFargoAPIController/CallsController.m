@@ -109,5 +109,8 @@
 
 -(void)requestFailed:(NSDictionary *)results withCallIdentifier:(id)callIdentifier {
     NSLog(@"%@",results);
+    if ([self.delegate respondsToSelector:@selector(requestFailed:withCallIdentifier:)]) {
+        
+    }
 }
 @end
