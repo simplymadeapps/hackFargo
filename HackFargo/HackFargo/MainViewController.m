@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "HackFargoAnnotation.h"
+#import "DetailViewController.h"
 
 @interface MainViewController ()
 
@@ -69,6 +70,7 @@
     
     NSDictionary *item = self.listItems[indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"%@", item[@"Description"]];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
@@ -76,6 +78,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
+    [self performSegueWithIdentifier:@"PushDetailView" sender:self.listItems[indexPath.row]];
     
 }
 
@@ -104,5 +107,20 @@
     [mapView showAnnotations:annotations animated:YES];
 }
 
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    NSLog(@"preparing for segue");
+    if ([segue.identifier isEqualToString:@"PushDetailView"]) {
+        NSDictionary *item = (NSDictionary *)sender;
+        DetailViewController *detailView = segue.destinationViewController;
+        detailView.detailItem = item;
+        detailView.title = item[@"Description"];
+    }
+}
 
 @end

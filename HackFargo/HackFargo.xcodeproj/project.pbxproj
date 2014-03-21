@@ -27,6 +27,7 @@
 		A923264818D9B01300153CDF /* HackFargoAPIController.m in Sources */ = {isa = PBXBuildFile; fileRef = A923264718D9B01300153CDF /* HackFargoAPIController.m */; };
 		A95D582318DC85C8003A05E5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A95D582218DC85C8003A05E5 /* MapKit.framework */; };
 		A95D582618DC95C4003A05E5 /* HackFargoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D582518DC95C4003A05E5 /* HackFargoAnnotation.m */; };
+		A95D582918DCB1F5003A05E5 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D582818DCB1F5003A05E5 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		A95D582218DC85C8003A05E5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A95D582418DC95C4003A05E5 /* HackFargoAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackFargoAnnotation.h; sourceTree = "<group>"; };
 		A95D582518DC95C4003A05E5 /* HackFargoAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackFargoAnnotation.m; sourceTree = "<group>"; };
+		A95D582718DCB1F5003A05E5 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		A95D582818DCB1F5003A05E5 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		F25281249ECD49B5AEAA604F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,12 +146,14 @@
 		A923261518D9ADD100153CDF /* HackFargo */ = {
 			isa = PBXGroup;
 			children = (
+				A923262118D9ADD100153CDF /* Main.storyboard */,
 				A923264418D9AFCB00153CDF /* App Delegate */,
 				0E4EB24218DBC02500D27CD3 /* Categories */,
 				A923264518D9AFE200153CDF /* API Manager */,
-				A923262118D9ADD100153CDF /* Main.storyboard */,
 				A923262418D9ADD100153CDF /* MainViewController.h */,
 				A923262518D9ADD100153CDF /* MainViewController.m */,
+				A95D582718DCB1F5003A05E5 /* DetailViewController.h */,
+				A95D582818DCB1F5003A05E5 /* DetailViewController.m */,
 				A95D582418DC95C4003A05E5 /* HackFargoAnnotation.h */,
 				A95D582518DC95C4003A05E5 /* HackFargoAnnotation.m */,
 				A923262718D9ADD100153CDF /* Images.xcassets */,
@@ -348,6 +353,7 @@
 				A923262618D9ADD100153CDF /* MainViewController.m in Sources */,
 				A95D582618DC95C4003A05E5 /* HackFargoAnnotation.m in Sources */,
 				0E4EB23E18DBAF8000D27CD3 /* CallsController.m in Sources */,
+				A95D582918DCB1F5003A05E5 /* DetailViewController.m in Sources */,
 				A923262018D9ADD100153CDF /* AppDelegate.m in Sources */,
 				0E4EB24518DBC0AE00D27CD3 /* NSDate+HackDates.m in Sources */,
 				A923261C18D9ADD100153CDF /* main.m in Sources */,

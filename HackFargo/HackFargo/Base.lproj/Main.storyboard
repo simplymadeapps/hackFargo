@@ -63,11 +63,53 @@
                         <outlet property="controlSwitch" destination="2MQ-Eb-4qF" id="LWs-Rp-Qlb"/>
                         <outlet property="listTable" destination="EaU-MW-p0m" id="aHd-jM-KSe"/>
                         <outlet property="mapView" destination="Ze7-Ar-Wbd" id="I2m-x8-CMU"/>
+                        <segue destination="s6k-IG-GrW" kind="push" identifier="PushDetailView" id="oqr-hQ-xJb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yTe-VR-1mv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="82" y="-394"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="q1h-9I-gjf">
+            <objects>
+                <viewController id="s6k-IG-GrW" customClass="DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XEW-RB-poy"/>
+                        <viewControllerLayoutGuide type="bottom" id="fHz-Uz-X7p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RiW-Xw-wmS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LWx-Jz-qjo">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="s6k-IG-GrW" id="04d-RY-ebE"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LWx-Jz-qjo" firstAttribute="top" secondItem="RiW-Xw-wmS" secondAttribute="top" id="ACX-66-Oc7"/>
+                            <constraint firstItem="fHz-Uz-X7p" firstAttribute="top" secondItem="LWx-Jz-qjo" secondAttribute="bottom" id="ZmV-hm-hBb"/>
+                            <constraint firstAttribute="trailing" secondItem="LWx-Jz-qjo" secondAttribute="trailing" id="f36-Jd-GbS"/>
+                            <constraint firstItem="LWx-Jz-qjo" firstAttribute="leading" secondItem="RiW-Xw-wmS" secondAttribute="leading" id="sxK-Eb-36W"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QOf-Z7-hdU"/>
+                    <connections>
+                        <outlet property="detailTextView" destination="LWx-Jz-qjo" id="EJM-bk-7Pv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dto-h3-BoQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="530" y="-394"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JP2-Gr-4qc">
