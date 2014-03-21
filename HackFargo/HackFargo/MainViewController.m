@@ -54,11 +54,19 @@
 
 #pragma mark - TableView Delegate Methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return self.listItems.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.listItems.count;
+    NSDictionary *sectionInfo = self.listItems[section];
+    NSArray *sectionCalls = [sectionInfo objectForKey:@"data"];
+    
+    return sectionCalls.count;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSDictionary *sectionInfo = self.listItems[section];
+    return [sectionInfo objectForKey:@"section"];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -68,7 +76,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    NSDictionary *item = self.listItems[indexPath.row];
+    NSDictionary *sectionInfo = self.listItems[indexPath.section];
+    NSArray *sectionCalls = [sectionInfo objectForKey:@"data"];
+    
+    NSDictionary *item = sectionCalls[indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"%@", item[@"Description"]];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
@@ -85,8 +96,24 @@
 #pragma mark - CallsControllerDelegate Methods
 
 -(void)allCallsResults:(NSArray *)calls {
-    NSLog(@"%@",calls);
-    self.listItems = calls;
+    
+    NSArray *callTypeNames = [calls valueForKeyPath:@"@distinctUnionOfObjects.Meta.CallType"];
+    NSMutableArray *dataSource = [[NSMutableArray alloc] init];
+
+    NSString *predicateString = [NSString stringWithFormat:@"Meta.CallType == $ITEM_NAME"];
+    NSPredicate *valuePredicate = [NSPredicate predicateWithFormat:predicateString];
+    
+    for (NSString *callType in callTypeNames) {
+        NSDictionary *variables = @{@"ITEM_NAME":callType};
+        NSPredicate *localPredicate = [valuePredicate predicateWithSubstitutionVariables:variables];
+
+        NSArray *filteredCalls = [calls filteredArrayUsingPredicate:localPredicate];
+        NSDictionary *section = @{@"section" : callType, @"data" : filteredCalls};
+        [dataSource addObject:section];
+    }
+    
+    self.listItems = dataSource;
+    
     [self updateMapPins];
     [listTable reloadData];
 }
@@ -97,9 +124,12 @@
 
 #pragma mark - Map Helper Methods
 - (void)updateMapPins {
+ 
+    
+    NSArray *items = [[self.listItems valueForKeyPath:@"data"] objectAtIndex:0];
     // Add the annotation to our map view
     NSMutableArray *annotations = [NSMutableArray new];
-    for (NSDictionary *dict in self.listItems) {
+    for (NSDictionary *dict in items) {
         CLLocationCoordinate2D coord = CLLocationCoordinate2DMake([dict[@"Lat"] doubleValue], [dict[@"Long"] doubleValue]);
         HackFargoAnnotation *annotation = [[HackFargoAnnotation alloc] initWithTitle:dict[@"Description"] andCoordinate:coord];
         [annotations addObject:annotation];

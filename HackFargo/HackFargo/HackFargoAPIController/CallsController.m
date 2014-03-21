@@ -77,9 +77,7 @@
 
 
 #pragma mark - API Controller Delegate Methods
--(void)requestSuccess:(id)results withCallIdentifier:(id)callIdentifier {
-    NSLog(@"results: %@",results);
-    
+-(void)requestSuccess:(id)results withCallIdentifier:(id)callIdentifier {    
     if ([callIdentifier isEqualToString:@"AllCalls"]) {
         if (self.delegate) {
             if ([self.delegate respondsToSelector:@selector(allCallsResults:)]) {
