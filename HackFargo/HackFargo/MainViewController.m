@@ -123,18 +123,18 @@
 }
 
 #pragma mark - Map Helper Methods
-- (void)updateMapPins {
- 
-    
-    NSArray *items = [[self.listItems valueForKeyPath:@"data"] objectAtIndex:0];
-    // Add the annotation to our map view
-    NSMutableArray *annotations = [NSMutableArray new];
-    for (NSDictionary *dict in items) {
-        CLLocationCoordinate2D coord = CLLocationCoordinate2DMake([dict[@"Lat"] doubleValue], [dict[@"Long"] doubleValue]);
-        HackFargoAnnotation *annotation = [[HackFargoAnnotation alloc] initWithTitle:dict[@"Description"] andCoordinate:coord];
-        [annotations addObject:annotation];
+- (void)updateMapPins { 
+    if (self.listItems && self.listItems.count > 0) {
+        NSArray *items = [[self.listItems valueForKeyPath:@"data"] objectAtIndex:0];
+        // Add the annotation to our map view
+        NSMutableArray *annotations = [NSMutableArray new];
+        for (NSDictionary *dict in items) {
+            CLLocationCoordinate2D coord = CLLocationCoordinate2DMake([dict[@"Lat"] doubleValue], [dict[@"Long"] doubleValue]);
+            HackFargoAnnotation *annotation = [[HackFargoAnnotation alloc] initWithTitle:dict[@"Description"] andCoordinate:coord];
+            [annotations addObject:annotation];
+        }
+        [mapView showAnnotations:annotations animated:YES];
     }
-    [mapView showAnnotations:annotations animated:YES];
 }
 
 #pragma mark - Navigation
